@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cloudiness Plot</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div>
+      <ul>
+        <li class="nav-item linkbox fixcentering">
+          <h4>
+            <a class="nav-link text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/static/index.html">Weather
+            </a>
+          </h4>
+        </li>
+      </ul>
+    </div>
+    <div class="nav-select-test linkbox">
+      <h4>
+        <a class="nav-link text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/static/index.html">Weather
+        </a>
+      </h4>
+    </div>
+    <select id="nav-select" onchange="window.open(this.value,'_self');">
+      <option value="#">[Select an Option]</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/temps">Plot: Max Temps</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/humidity">Plot: Humidity</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/clouds">Plot: Cloudiness</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/winds">Plot: Wind Speed</option>
+      <option disabled>──────────</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/comps/">Comparisons</option>
+      <option disabled>──────────</option>
+      <option value="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/data/">Data</option>
+    </select>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white onpage" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Plots
+          </a>
+            <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/temps">Max Temperature</a>
+              <a class="dropdown-item text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/humidity">Humidity</a>
+              <a class="dropdown-item text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/clouds">Cloudiness</a>
+              <a class="dropdown-item text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/winds">Wind Speed</a>
+                <div class="dropdown-divider">
+                </div>
+              <a class="dropdown-item text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/plots">All
+              </a>
+            </div>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li class="nav-item fixcentering">
+          <a class="nav-link text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/comps/">Comparisons
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <ul>
+        <li class="nav-item fixcentering">
+          <a class="nav-link text-white" href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/data/">Data
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card-columns" style="width: 300%;">
+        <div class="card bg-dark">
+          <div class="card-body">
+            <div class="col-md-12">
+              <h3 class="card-title text-white">Latitude vs. Cloudiness:
+              </h3>
+                <img src="https://github.com/galadREAL/bootstrap-githubpages/blob/master/Bootstrap-GP/static/clouds.png?raw=true" class="card-img-top" alt="clouds plot pic">
+            </div>
+            <p class="card-text lead text-white">There is no strong relationship between latitude and cloudiness. However, it
+            is interesting to see that a strong band of cities sits at 0, 80, and 100%
+            cloudiness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card-columns" style="text-align: center; width: 270%;">
+        <div class="card bg-dark">
+          <div class="card-body">
+            <h3 class="card-title text-white" style="text-align: left;">Visualizations:
+            </h3>
+            <div class="col-md-6 mt-3">
+              <a href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/temps">
+                <p class="card-text font-weight-light">Max Temperature
+                </p>
+                  <img src="https://github.com/galadREAL/bootstrap-githubpages/blob/master/Bootstrap-GP/static/temp.png?raw=true" class="card-img-top" alt="...">
+              </a>
+            </div>
+            <div class="col-md-6 mt-3">
+              <a href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/humidity">
+                <p class="card-text font-weight-light">Humidity
+                </p>
+                  <img src="https://github.com/galadREAL/bootstrap-githubpages/blob/master/Bootstrap-GP/static/humidity.png?raw=true" class="card-img-top" alt="...">
+              </a>
+            </div>
+            <div class="col-md-6 shadow-lg p-1 mb-5 mt-5 bg-white rounded lead">
+              <div style="box-shadow: 0px 0px 20px white;">
+                <a href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/clouds">
+                  <p class="card-text font-weight-bold">Cloudiness
+                  </p>
+                    <img src="https://github.com/galadREAL/bootstrap-githubpages/blob/master/Bootstrap-GP/static/clouds.png?raw=true" class="card-img-top" alt="...">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6 mt-5" style="">
+              <a href="https://galadreal.github.io/bootstrap-githubpages/Bootstrap-GP/winds">
+                <p class="card-text font-weight-light">Wind Speed
+                </p>
+                  <img src="https://github.com/galadREAL/bootstrap-githubpages/blob/master/Bootstrap-GP/static/winds.png?raw=true" class="card-img-top" alt="...">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

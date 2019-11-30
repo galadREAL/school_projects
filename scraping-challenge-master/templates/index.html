@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data Homework</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-image: linear-gradient(black, rgb(1, 50, 50));">
+
+  <!--Top of the Page Jumbotron Header-->
+  <div class="row container-fluid">
+    <div class="container-fluid">
+      <div class="jumbotron text-center bg-dark text-white">
+        <h1>Mission to Mars</h1>
+        <a class=" p-3 btn btn-secondary btn-md btn-block" href="/scrape" role="button" data-toggle="tooltip"
+          data-placement="top" title="Click this Button to Scrape New Data!">Scrape New Data!</a>
+      </div>
+    </div>
+  </div>
+
+  <!--Latest Martian News Card-->
+  <div class="row container-fluid m-5 p-auto" style="width: 90%;">
+    <div class="container-fluid">
+      <div class="card bg-dark text-white">
+        <h2 class="card-header font-weight-bold">Latest Martian News</h2>
+        <div class=" card-body" style="border-top-style: solid; border-top-color: #020B0B">
+          <h4 class="card-title">{{ data.latest_mars_news.title }}</h4>
+          <p class="card-text lead">{{ data.latest_mars_news.paragraph }}</p>
+        </div>
+      </div>
+      <footer class="blockquote-footer">courtesy of: <cite title="Source Title">The Mars Exploration
+          Program and the
+          Jet
+          Propulsion Laboratory for NASA’s Science Mission Directorate</cite></footer>
+    </div>
+  </div>
+
+  <!--Row Containing the Featured Image Display Card, the Latest Weather Tweet Card, and the
+  Facts Table Image Display Card-->
+  <div class="row mt-3 container-fluid m-5 p-auto" style="width: 90%;"">
+    <div class=" container-fluid col-md-7">
+    <div class="card" style="opacity: 0;">
+      <img class="card-img" src="/static/placeholder.png" alt="Space Filler">
+    </div>
+    <div class=" card bg-dark text-white">
+      <h2 class=" card-header font-weight-bold">Featured Mars Image</h2>
+      <div class="card-body" style="border-top-style: solid; border-top-color: #020B0B">
+        <img src="{{ data.featured_image_url }}" class="img-fluid">
+      </div>
+    </div>
+    <footer class="blockquote-footer">courtesy of: <cite title="Source Title">The Jet Propulsion Laboratory at The
+        California Institute of Technology</cite>
+    </footer>
+    <div class="card" style="opacity: 0;">
+      <img class="card-img" src="/static/placeholder.png" alt="Space Filler">
+    </div>
+  </div>
+  <div class="container-fluid col-md-5">
+    <div class="card mt-5" style="opacity: 0;">
+      <img class="card-img" src="/static/placeholder.png" alt="Space Filler">
+    </div>
+    <div class="card bg-dark text-white">
+      <h2 class="card-header font-weight-bold">Current Weather on Mars</h2>
+      <div class="card-body" style="border-top-style: solid; border-top-color: #020C0C">
+        <p class="card-text lead">{{ data.latest_mars_weather }}</p>
+      </div>
+    </div>
+    <footer class="blockquote-footer">courtesy of: <cite title="Source Title">Twitter Account @MarsWxReport:
+        https://twitter.com/marswxreport</cite>
+    </footer>
+    <div class="card bg-dark text-white mt-5">
+      <h2 class="card-header font-weight-bold">Mars Facts</h2>
+      <div class="card-body" style="border-top-style: solid; border-top-color: #020F0F">
+        <img src="/static/mars_facts.png" class="img-fluid" alt="Mars Facts Table">
+      </div>
+    </div>
+    <footer class="blockquote-footer">courtesy of: <cite title="Source Title">Chris Jones, Carolyn Collins Petersen:
+        https://space-facts.com/mars/</cite>
+    </footer>
+    <div class="card" style="opacity: 0;">
+      <img class="card-img" src="/static/placeholder.png" alt="Space Filler">
+    </div>
+  </div>
+  </div>
+
+  <!--Grid of all 4 Martian Hemisphere's Images and Descriptors --- This is the coolest set of the
+  html page because I figured out how to use Django commands to do a for-loop (line #95)-->
+  <div class="row mt-3 container-fluid m-5 p-auto" style="width: 90%;"">
+    <div class=" container-fluid col-md-12">
+    <h2 class="card-header bg-dark text-white text-center mb-1"
+      style="width: 98.05%; margin-left: 10px; border-bottom-style: solid; border-bottom-color: #031A19">Hemispheres
+      of
+      Mars</h2>
+    {% for hemisphere_dict in data.mars_hemisphere_list %} <div class="container-fluid col-md-6">
+      <div class="card bg-dark text-white">
+        <div class="card-body p-1" style="border-bottom-style: solid; border-bottom-color: #031A19">
+          <img src="{{ hemisphere_dict.img_url }}" class="img-fluid">
+          <h4 class="card-title text-center mt-3 p-1 font-weight-bold">{{ hemisphere_dict.title }}</h4>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    <footer class="blockquote-footer" style="margin-left: 15px;">courtesy of: <cite title="Source Title">The U.S.
+        Geological Survey of The U.S.
+        Department of the
+        Interior: Astrogeology Science Center</cite>
+    </footer>
+  </div>
+  </div>
+  <footer class="blockquote-footer">created by: <cite title="Source Title">--- g a l a d r e a l --- 2 0 1 9</cite>
+  </footer>
+</body>
+
+</html>

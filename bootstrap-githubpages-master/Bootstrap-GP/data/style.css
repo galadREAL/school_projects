@@ -1,0 +1,136 @@
+h3 {
+  color: #343A40;
+}
+
+body {
+  background-color: aliceblue;
+}
+
+.card {
+  border-radius: 0 !important;
+  border: 0 none;
+  -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.5);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+.linkbox {
+  border-radius: 0 !important;
+  border: 0 none;
+  -webkit-box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 1px 0px rgba(255, 255, 255, 0.5);
+  margin-right: 1px;
+}
+
+.onpage {
+  border-radius: 0 !important;
+  border: 0 none;
+  -webkit-box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 6px 6px rgba(255, 255, 255, 0.5);
+  margin-right: 1px;
+}
+
+
+#nav-select {
+  visibility: hidden;
+}
+
+
+.nav-select-test {
+  visibility: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.fixcentering {
+  margin-top: 11px;
+}
+
+.dropdown-item:focus {
+  background-color: #343A40;
+}
+
+.dropdown-item:hover {
+  background-color: #343A40;
+}
+
+.navbar {
+  height: 62px;
+}
+
+
+@media (max-width: 991px) {
+  .navbar li {
+    visibility: hidden;
+  }
+
+  .navbar ul {
+    visibility: hidden;
+  }
+
+  #nav-select {
+    visibility: visible;
+  }
+
+  .nav-select-test {
+    visibility: visible;
+  }
+
+  .card {
+    width: 32%;
+  }
+
+  .spaarfix {
+    width: 200%;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .navbar li {
+    visibility: hidden;
+  }
+
+  .navbar ul {
+    visibility: hidden;
+  }
+
+  #nav-select {
+    visibility: visible;
+  }
+
+  .nav-select-test {
+    visibility: visible;
+  }
+
+  .card {
+    width: 32%;
+  }
+
+  .card {
+    margin-top: 20px;
+  }
+
+  .card-body {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .navbar {
+    height: 100px;
+  }
+}
+
+@media (max-width: 222px) {
+  .navbar {
+    height: 115px;
+  }
+}

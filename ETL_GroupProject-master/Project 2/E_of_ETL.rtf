@@ -1,0 +1,12 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww18960\viewh13280\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Our project's data was extracted from two different sources, BART.gov and Kaggle. To clean and combine this set, BART's data was manipulated first. The excel sheet was converted into a Panda's DataFrame, and then only the station name as well as the years 2011 through 2014 were copied into a new DataFrame. We then selected only the downtown San Francisco stations by their iloc location.\
+\
+Next, the Kaggle data on San Francisco salaries was loaded into a Pandas DataFrame, and then the Base Pay, Benefits, Total Pay, and Year columns were copied out into a new DataFrame. We next drop all rows that are NaN, and then all rows that are non-numeric. Afterwards we are able to use the group_by function to group the columns by year, and bumpy to round these figures down to two decimals.\
+\
+Last, insert the BART DataFrame onto the Salaries Dataframes where we are then able to see all data grouped side-by-side by each year.}
